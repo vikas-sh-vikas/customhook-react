@@ -1,19 +1,24 @@
 import './App.css';
-import Router from './lib/components/Router';
-import UserContextProvider from './lib/context/UserContextProvider';
-// import UserContextProvider from '../context/UserContextProvider'
-import { useContext } from 'react'
-import UserContext from './lib/context/UserContext'
+import {UserContextProvider} from './lib/context/UserContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SignUp from './pages/SignUp/SignUp';
+import SignIn from './pages/SignIn/SignIn';
+import Profile from './pages/Profile/Profile';
 
 
 
 function App() {
-  const {user} = useContext(UserContext);
   return (
 <div className='App'>
     <UserContextProvider>
-    <Router/>
+    <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<SignUp />} />
+            <Route path="/SignIn" element={<SignIn />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Routes>
+    </BrowserRouter>
     </UserContextProvider>
   </div>
 

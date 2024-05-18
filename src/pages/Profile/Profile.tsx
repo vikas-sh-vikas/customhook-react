@@ -1,24 +1,16 @@
-import { useContext } from 'react'
-import UserContext from '../context/UserContext'
 import {   useNavigate } from 'react-router-dom'
-import SignIn from './SignIn';
+import './profile.css'
+import {UserContext} from '../../lib/context/UserContext';
+import { useContext } from 'react';
 
 
 function Profile() {
   const navigate = useNavigate()
-  const {user,setUser} = useContext(UserContext);
+  const { user, updateUserState } = useContext(UserContext);
   console.log("ProfileData",user)
 const logout = (e:any) => 
   {e.preventDefault();
-    setUser({
-      name:user.name,
-      email:user.email,
-      password:user.password,
-      isUser:true,
-      loggedIn:false
-    })
     navigate("/signin")
-
 };
   return (
     <div>
