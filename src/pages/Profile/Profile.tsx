@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import "./profile.css";
 import { UserContext } from "../../lib/context/UserContext";
 import { useContext } from "react";
 
 function Profile() {
   const navigate = useNavigate();
   const { user, updateUserState } = useContext(UserContext);
-  console.log("ProfileData", user);
+  // console.log("ProfileData", user);
   const logout = (e: any) => {
     e.preventDefault();
     navigate("/signin");

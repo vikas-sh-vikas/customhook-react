@@ -5,8 +5,6 @@ type UserModel = {
     isUser:boolean
     loggedIn:boolean
     confirmPassword?:string
-    matchPassword?:string
-    matchEmail?:string
   };
   
   interface UserState {

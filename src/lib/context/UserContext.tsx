@@ -4,14 +4,11 @@ import useUser from "../hook/useUser";
 // Define the default state
 const defaultState: UserState = {
     user: {
-        name: undefined,
+        name: "",
         email: '',
         password: '',
         isUser: false,
         loggedIn: false,
-        confirmPassword: undefined,
-        matchPassword: undefined,
-        matchEmail: undefined
     },
     updateUserState: (user: UserModel) => {}
 };

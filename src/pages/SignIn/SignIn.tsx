@@ -15,10 +15,6 @@ function SignIn() {
     message: null,
   });
   const { user, updateUserState } = useContext(UserContext);
-  useEffect(() => {
-    setData({ ...data, matchPassword: user.password });
-    setData({ ...data, matchEmail: user.email });
-  }, []);
   const handleLog = (e: any) => {
     e.preventDefault();
     if (!data.email || !data.password) {
